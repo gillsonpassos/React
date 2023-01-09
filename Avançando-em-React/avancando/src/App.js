@@ -7,6 +7,7 @@ import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 import Fragment from "./components/Fragment";
+import Container from "./components/Container";
 
 function App() {
   return (
@@ -30,7 +31,15 @@ function App() {
       {/* reaproveitando */}
       <CarDetails brand="Ford" color="vermelha" km={0} newCar={true} />
       <CarDetails brand="Fiat" color="branco" km={4500} newCar={false} />
+      {/* fragment */}
       <Fragment propFragment="test" />
+      {/* children */}
+      <Container myValue="testing">
+        <p>E este é o Conteudo</p>
+      </Container>
+      <Container myValue="testing 2">
+        <h5>Testando o container</h5>
+      </Container>
     </div>
   );
 }
