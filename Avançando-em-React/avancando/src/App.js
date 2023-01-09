@@ -6,6 +6,7 @@ import ConditionalRender from "./components/ConditionalRender";
 import ListRender from "./components/ListRender";
 import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
+import Fragment from "./components/Fragment";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       {/* reaproveitando */}
       <CarDetails brand="Ford" color="vermelha" km={0} newCar={true} />
       <CarDetails brand="Fiat" color="branco" km={4500} newCar={false} />
+      <Fragment propFragment="test" />
     </div>
   );
 }
