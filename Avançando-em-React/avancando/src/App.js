@@ -8,8 +8,13 @@ import ManageData from "./components/ManageData";
 import ShowUserName from "./components/ShowUserName";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 
 function App() {
+  function showMessage() {
+    console.log("Evento do Componente Pai!");
+  }
+
   return (
     <div className="App">
       <h1>Avançando em React</h1>
@@ -40,6 +45,9 @@ function App() {
       <Container myValue="testing 2">
         <h5>Testando o container</h5>
       </Container>
+
+      {/*Executar Função */}
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   );
 }
