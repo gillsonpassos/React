@@ -34,6 +34,26 @@
       "name": "moto Honda",
       "price": "12000",
       "id": 7
+    },
+    {
+      "name": "teclado",
+      "price": "110",
+      "id": 8
+    },
+    {
+      "name": "celular",
+      "price": "700",
+      "id": 9
+    },
+    {
+      "name": "celular",
+      "price": "700",
+      "id": 10
+    },
+    {
+      "name": "bola",
+      "price": "10",
+      "id": 11
     }
   ]
 }
