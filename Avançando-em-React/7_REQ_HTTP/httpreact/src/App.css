@@ -53,3 +53,9 @@ form input {
   flex-direction: column;
   margin-bottom: 15px;
 }
+
+ul button {
+  color: red;
+  margin-left: 2em;
+  margin-top: 0.5em;
+}
