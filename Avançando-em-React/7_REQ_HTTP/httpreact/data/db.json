@@ -16,21 +16,6 @@
       "price": 29.9
     },
     {
-      "name": "test",
-      "price": "22",
-      "id": 4
-    },
-    {
-      "name": "test",
-      "price": "22",
-      "id": 5
-    },
-    {
-      "name": "moto Honda",
-      "price": "12000",
-      "id": 6
-    },
-    {
       "name": "moto Honda",
       "price": "12000",
       "id": 7
@@ -43,17 +28,22 @@
     {
       "name": "celular",
       "price": "700",
-      "id": 9
-    },
-    {
-      "name": "celular",
-      "price": "700",
       "id": 10
     },
     {
       "name": "bola",
       "price": "10",
       "id": 11
+    },
+    {
+      "name": "malas",
+      "price": "120",
+      "id": 12
+    },
+    {
+      "name": "cabo USB",
+      "price": "20",
+      "id": 13
     }
   ]
 }
