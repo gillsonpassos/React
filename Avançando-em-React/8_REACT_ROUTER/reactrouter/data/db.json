@@ -14,6 +14,21 @@
       "id": 3,
       "name": "Boné aba reta",
       "price": 29.9
+    },
+    {
+      "id": 4,
+      "name": "Honda",
+      "price": 12.500
+    },
+    {
+      "id": 5,
+      "name": "Macacão",
+      "price": 39.90
+    },
+    {
+      "id": 6,
+      "name": "Bicicleta",
+      "price": 1.200
     }
   ]
 }
