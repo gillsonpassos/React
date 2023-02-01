@@ -2,7 +2,7 @@ import styles from "./Register.module.css";
 
 import { useState, useEffect } from "react";
 
-import { useAuthentication } from "../../hooks/useAuthentication";
+import { useAuthentication } from "../../Hooks/useAuthentication";
 
 const Register = () => {
   const [displayName, setDisplayName] = useState("");
