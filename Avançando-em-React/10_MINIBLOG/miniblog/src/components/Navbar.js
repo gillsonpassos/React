@@ -2,17 +2,17 @@ import { NavLink } from "react-router-dom";
 
 import { useAuthentication } from "../Hooks/useAuthentication";
 
-import { useAuthValue } from "../context/AuthContext";
+import { useAuthValue } from "../contexts/AuthContext";
 
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-  const { user } = useAuthValue();
   const { logout } = useAuthentication();
+  const { user } = useAuthValue();
 
   return (
     <nav className={styles.navbar}>
-      <NavLink to="/" className={styles.brand}>
+      <NavLink className={styles.brand} to="/">
         Mini <span>Blog</span>
       </NavLink>
       <ul className={styles.links_list}>
