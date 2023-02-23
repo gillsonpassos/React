@@ -33,20 +33,9 @@ const CreatePost = () => {
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
     // check values
-    if (!title || !image || !tags || !body) {
+    if (!title || !image || !tagsArray || !body) {
       setFormError("Por favor, preencha todos os campos!");
     }
-
-    console.log(tagsArray);
-
-    console.log({
-      title,
-      image,
-      body,
-      tags: tagsArray,
-      uid: user.uid,
-      createdBy: user.displayName,
-    });
 
     if (formError) return;
 

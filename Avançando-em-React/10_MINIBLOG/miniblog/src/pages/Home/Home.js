@@ -2,7 +2,7 @@ import styles from "./Home.module.css";
 
 // hooks
 import { useNavigate, Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFetchDocuments } from "../../Hooks/useFetchDocuments";
 
 // components
@@ -21,6 +21,10 @@ const Home = () => {
       return navigate(`/search?q=${query}`);
     }
   };
+
+  useEffect(() => {
+    console.log({ posts });
+  }, [posts]);
 
   return (
     <div className={styles.home}>
