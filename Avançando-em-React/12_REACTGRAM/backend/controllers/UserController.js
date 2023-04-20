@@ -124,17 +124,21 @@ const update = async (req, res) => {
 const getUserById = async (req, res) => {
   const { id } = req.params;
 
-  const user = await User.findById(mongoose.Types.ObjectId(id)).select(
-    "-password"
-  );
-
-  // Check if user exists
-  if (!user) {
+  try {
+    const user = await User.findById(new mongoose.Types.ObjectId(id)).select(
+      "-password"
+    );
+    // Check if user exists
+    if (!user) {
+      res.status(404).json({ errors: ["Usuário não encontrado 2"] });
+      return;
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
     res.status(404).json({ errors: ["Usuário não encontrado!"] });
     return;
   }
-
-  res.status(200).json(user);
 };
 
 module.exports = {
