@@ -2,6 +2,7 @@ import "./Auth.css";
 
 // Components
 import { Link } from "react-router-dom";
+import Message from "../../components/Message";
 
 // Hooks
 import { useState, useEffect } from "react";
@@ -29,12 +30,13 @@ const Register = () => {
       password,
       confirmPassword,
     };
-    //console.log(user);
+
+    console.log(user);
 
     dispatch(register(user));
   };
 
-  // clean all auth states
+  // Clean all auth states
   useEffect(() => {
     dispatch(reset());
   }, [dispatch]);
@@ -48,30 +50,32 @@ const Register = () => {
           type="text"
           placeholder="Nome"
           onChange={(e) => setName(e.target.value)}
-          value={name || ""}
+          value={name}
         />
         <input
           type="email"
           placeholder="E-mail"
           onChange={(e) => setEmail(e.target.value)}
-          value={email || ""}
+          value={email}
         />
         <input
           type="password"
           placeholder="Senha"
           onChange={(e) => setPassword(e.target.value)}
-          value={password || ""}
+          value={password}
         />
         <input
           type="password"
           placeholder="Confirme a senha"
           onChange={(e) => setConfirmPassword(e.target.value)}
-          value={confirmPassword || ""}
+          value={confirmPassword}
         />
-        <input type="submit" value="Cadastrar" />
+        {!loading && <input type="submit" value="Cadastrar" />}
+        {loading && <input type="submit" disabled value="Aguarde..." />}
+        {error && <Message msg={error} type="error" />}
       </form>
       <p>
-        Já tem conta? <Link to="/login">clique aqui.</Link>
+        Já tem conta? <Link to="/login">Clique aqui</Link>
       </p>
     </div>
   );
