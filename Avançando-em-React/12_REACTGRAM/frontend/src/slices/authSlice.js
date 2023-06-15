@@ -33,6 +33,7 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 // Sing in a user
 export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   const data = await authService.login(user);
+  console.log(data);
 
   // Check for errors
   if (data.errors) {
