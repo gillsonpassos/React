@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 // Redux
-import { profile, resetMessage, updateProfile } from "../../slices/userSlice";
+import { profile, updateProfile, resetMessage } from "../../slices/userSlice";
 
 // Components
 import Message from "../../components/Message";
@@ -67,7 +67,7 @@ const Profile = () => {
 
     formData.append("user", userFormData);
 
-    await dispatch(updateProfile(userFormData));
+    await dispatch(updateProfile(formData));
 
     setTimeout(() => {
       dispatch(resetMessage());
