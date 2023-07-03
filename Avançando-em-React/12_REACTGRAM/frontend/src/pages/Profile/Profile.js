@@ -5,7 +5,7 @@ import { uploads } from "../../utils/config";
 // components
 import Message from "../../components/Message";
 import { Link } from "react-router-dom";
-import { BsFillEyeFill, BsPencilFill, BsXlg } from "react-icons/bs";
+import { BsFillEyeFill, BsPencilFill, BsXLg } from "react-icons/bs";
 
 // hooks
 import { useState, useEffect, useRef } from "react";
@@ -132,7 +132,13 @@ export const Profile = () => {
                   />
                 )}
                 {id === userAuth._id ? (
-                  <p>actions</p>
+                  <div className="actions">
+                    <Link to={`/photos/${photo._id}`}>
+                      <BsFillEyeFill />
+                    </Link>
+                    <BsPencilFill />
+                    <BsXLg />
+                  </div>
                 ) : (
                   <Link className="btn" to={`/photos/${photo._id}`}>
                     ver
