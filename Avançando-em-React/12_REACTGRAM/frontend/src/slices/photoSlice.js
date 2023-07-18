@@ -44,11 +44,16 @@ export const getUserPhotos = createAsyncThunk(
 );
 
 // Get photo
-export const getPhoto = createAsyncThunk("photo/getphoto", async (id) => {
-  const data = await photoService.getPhoto(id);
+export const getPhoto = createAsyncThunk(
+  "photo/getphoto",
+  async (id, thunkAPI) => {
+    const token = thunkAPI.getState().auth.user.token;
 
-  return data;
-});
+    const data = await photoService.getPhoto(id, token);
+
+    return data;
+  }
+);
 
 // Delete a photo
 export const deletePhoto = createAsyncThunk(
@@ -58,6 +63,7 @@ export const deletePhoto = createAsyncThunk(
 
     const data = await photoService.deletePhoto(id, token);
 
+    console.log(data.errors);
     // Check for errors
     if (data.errors) {
       return thunkAPI.rejectWithValue(data.errors[0]);
