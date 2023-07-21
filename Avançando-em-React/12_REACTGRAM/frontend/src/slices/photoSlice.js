@@ -279,7 +279,7 @@ export const photoSlice = createSlice({
       })
       .addCase(getPhotos.pending, (state) => {
         state.loading = true;
-        state.error = null;
+        state.error = false;
       })
       .addCase(getPhotos.fulfilled, (state, action) => {
         console.log(action.payload);

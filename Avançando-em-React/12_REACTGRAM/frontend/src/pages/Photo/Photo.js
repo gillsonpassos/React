@@ -47,12 +47,12 @@ const Photo = () => {
   const handleComment = (e) => {
     e.preventDefault();
 
-    const photoData = {
+    const commentData = {
       comment: commentText,
       id: photo._id,
     };
 
-    dispatch(comment(photoData));
+    dispatch(comment(commentData));
 
     setCommentText("");
 
