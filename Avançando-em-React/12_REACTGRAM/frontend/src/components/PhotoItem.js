@@ -3,8 +3,13 @@ import "./PhotoItem.css";
 import { uploads } from "../utils/config";
 
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const PhotoItem = ({ photo }) => {
+  useEffect(() => {
+    //console.log(photo);
+  }, [photo]);
+
   return (
     <div className="photo-item">
       {photo.image && (

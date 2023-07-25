@@ -17,7 +17,7 @@ const insertPhoto = async (req, res) => {
     image,
     title,
     userId: user._id,
-    username: user.name,
+    userName: user.name,
   });
 
   // If photo was created successfully,return date

@@ -10,7 +10,7 @@ const initialState = {
   message: null,
 };
 
-// Publish an user's photo
+// Publish an users photo
 export const publishPhoto = createAsyncThunk(
   "photo/publish",
   async (photo, thunkAPI) => {
@@ -36,8 +36,8 @@ export const getUserPhotos = createAsyncThunk(
 
     const data = await photoService.getUserPhotos(id, token);
 
-    console.log(data);
-    console.log(data.errors);
+    // console.log(data);
+    // console.log(data.errors);
 
     return data;
   }
@@ -111,12 +111,12 @@ export const like = createAsyncThunk("photo/like", async (id, thunkAPI) => {
 // Add comment to a photo
 export const comment = createAsyncThunk(
   "photo/comment",
-  async (photoData, thunkAPI) => {
+  async (commentData, thunkAPI) => {
     const token = thunkAPI.getState().auth.user.token;
 
     const data = await photoService.comment(
-      { comment: photoData.comment },
-      photoData.id,
+      { comment: commentData.comment },
+      commentData.id,
       token
     );
 
@@ -136,7 +136,6 @@ export const getPhotos = createAsyncThunk(
     const token = thunkAPI.getState().auth.user.token;
 
     const data = await photoService.getPhotos(token);
-
     return data;
   }
 );
@@ -198,7 +197,7 @@ export const photoSlice = createSlice({
         state.error = null;
       })
       .addCase(getPhoto.fulfilled, (state, action) => {
-        console.log(action.payload);
+        //console.log(action.payload);
         state.loading = false;
         state.success = true;
         state.error = null;
@@ -287,7 +286,6 @@ export const photoSlice = createSlice({
         state.error = false;
       })
       .addCase(getPhotos.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.loading = false;
         state.success = true;
         state.error = null;
